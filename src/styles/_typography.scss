@@ -1,3 +1,21 @@
 h1 {
-  @extend %h1;
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: $white;
+
+  & span {
+    color: $primary;
+  }
+}
+
+h2 {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 130%;
+  text-align: center;
+  color: $gray-900;
 }

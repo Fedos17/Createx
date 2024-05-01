@@ -1,0 +1,229 @@
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+
+  &__content {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // left
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-list {
+    display: flex;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    margin: 0 30px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__menu-link {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    color: $gray-800;
+    display: inline-block;
+
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: $primary;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primary;
+
+      &::after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // right
+  &__right {
+    display: flex;
+    column-gap: 16px;
+
+    @include desktop {
+      column-gap: 36px;
+    }
+  }
+
+  @keyframes tel {
+    0% {
+      transform: rotate(-5deg);
+    }
+
+    25% {
+      transform: rotate(0);
+    }
+
+    50% {
+      transform: rotate(10deg);
+    }
+
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  @keyframes call {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &__contact {
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    &-phone-svg,
+    &-call-svg {
+      overflow: visible;
+      transform-origin: center;
+    }
+
+    &:hover &-phone-svg {
+      animation: tel 0.3s linear infinite;
+    }
+
+    &:hover &-call-svg--2 {
+      animation: call 2s linear infinite;
+    }
+
+    &:hover &-call-svg--1 {
+      animation: tel 1s linear infinite;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__contact-description {
+    display: none;
+
+    @media (min-width: 940px) {
+      display: block;
+    }
+  }
+
+  &__contacts-name {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: $gray-800;
+  }
+
+  &__contacts-value {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $gray-900;
+    min-width: 123px;
+    display: block;
+
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      transform: scale(1.05);
+    }
+
+  }
+
+  &__menu {
+    height: 20px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    @include tablet {
+      display: none;
+    }
+
+    & span {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background-color: $primary;
+      transform-origin: center;
+
+      transition: all 0.5s;
+    }
+
+    &--active span {
+      &:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg) translateY(-50%);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 50%;
+        transform: rotate(-45deg) translateY(50%);
+      }
+    }
+
+    &--active:focus,
+    &:focus span {
+      &:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg) translateY(-50%);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 50%;
+        transform: rotate(-45deg) translateY(50%);
+      }
+    }
+  }
+
+}
