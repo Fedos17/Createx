@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .page {
   position: relative;
+
+  &-overflow {
+    overflow: hidden;
+  }
 }

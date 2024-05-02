@@ -6,6 +6,7 @@
   height: 100vh;
   z-index: 50;
   background-color: $white;
+  overflow: auto;
   transition: all 1s;
 
   opacity: 0;
