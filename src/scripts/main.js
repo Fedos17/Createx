@@ -9,3 +9,14 @@ window.onhashchange = (e) => {
 
   return menu;
 };
+
+const flkty = new window.Flickity('.carousel-header', {
+  // options
+  cellAlign: 'left',
+  contain: true,
+  draggable: false,
+  wrapAround: true,
+  autoPlay: 3000,
+});
+
+flkty();

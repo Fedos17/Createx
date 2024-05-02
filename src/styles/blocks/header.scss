@@ -1,0 +1,33 @@
+.header {
+
+  &__content {
+    padding: 10% 0;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: $white;
+    max-width: 595px;
+  }
+
+  &__buttons {
+    padding: 61px 0;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__button-1 {
+    width: 278px;
+  }
+
+  &__button-2 {
+    width: 224px;
+  }
+}
